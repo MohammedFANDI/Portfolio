@@ -12,8 +12,8 @@ import { JsonPipe, KeyValuePipe, NgFor } from '@angular/common';
 })
 export class FormCourseComponent {
   @Input() editable: boolean = false;
-  @Output() save = new EventEmitter();
-  @Output() update = new EventEmitter();
+  @Output() save = new EventEmitter<Course>();
+  @Output() update = new EventEmitter<Course>();
 
   @Input() course: Course = {
     title: '',

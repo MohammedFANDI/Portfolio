@@ -1,0 +1,14 @@
+<div class="flex flex-row items-center ms-5 mx-2 gap-5">
+  <input
+    (change)="toggleActiveContact()"
+    type="checkbox"
+    class="toggle toggle-success"
+    [checked]="contact.active"
+  />
+  <button (click)="editContact()" class="btn btn-sm btn-warning btn-outline">
+    Edit
+  </button>
+  <button (click)="deleteContact()" class="btn btn-sm btn-error btn-outline">
+    Delete
+  </button>
+</div>

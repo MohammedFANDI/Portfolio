@@ -1,16 +1,65 @@
 <div class="navbar bg-neutral text-neutral-content">
-    <div class="flex-1">
-      <a routerLink="/" class="btn btn-ghost text-xl">Bright Coding</a>
-    </div>
-    <div class="flex-none">
-      <ul class="menu menu-horizontal px-1">
-        <li><a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="nav-active" routerLink="/home" >Home</a></li>
-        <li><a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="nav-active" routerLink="/blog/list" >Blog</a></li>
-        <li><a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="nav-active" routerLink="/todos">Todos</a></li>
-        <li><a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="nav-active" routerLink="/elearning">Elearning {{ counterService.count | async }}</a></li>
-        <li><a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="nav-active" routerLink="/counter">Counter</a></li>
-        <li><a [routerLinkActiveOptions]="{exact: true}" routerLinkActive="nav-active" routerLink="/users">Users</a></li>
-       
-      </ul>
-    </div>
+  <div class="flex-1">
+    <a routerLink="/" class="btn btn-ghost text-xl">My Portfolio App</a>
   </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="nav-active"
+          routerLink="/home"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="nav-active"
+          routerLink="/contacts"
+          >Contcats</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="nav-active"
+          routerLink="/blog/list"
+          >Blog</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="nav-active"
+          routerLink="/todos"
+          >Todos</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="nav-active"
+          routerLink="/elearning"
+          >Elearning {{ counterService.count | async }}</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="nav-active"
+          routerLink="/counter"
+          >Counter</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="nav-active"
+          routerLink="/users"
+          >Users</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>

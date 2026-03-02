@@ -1,0 +1,58 @@
+<form [formGroup]="contactForm" class="bg-teal-50 p-10 rounded-3xl">
+  <div class="form-control w-full max-w-xs">
+    <label class="label">
+      <span class="label-text">Name</span>
+    </label>
+    <input
+      formControlName="name"
+      type="text"
+      placeholder="Contact Name ..."
+      class="input input-bordered w-full max-w-xs"
+    />
+    @if (name?.invalid && (name?.touched)) {
+    <div role="alert" class="flex flext-col alert alert-error my-2">
+      @if(name?.hasError('required')) {
+      <div>name is required</div>
+      }
+    </div>
+    }
+  </div>
+
+  <div class="form-control w-full max-w-xs">
+    <label class="label">
+      <span class="label-text">Phone</span>
+    </label>
+    <input
+      formControlName="phone"
+      type="text"
+      placeholder="Contact Phone ..."
+      class="input input-bordered w-full max-w-xs"
+    />
+    @if (phone?.invalid && (phone?.touched)) {
+    <div role="alert" class="flex flex-col alert alert-error my-2">
+      @if (phone?.hasError('required')) {
+      <span>name is required</span>
+      }
+    </div>
+    }
+  </div>
+
+  <div class="form-control my-5">
+    <label class="label cursor-pointer">
+      <span class="label-text">Active</span>
+      <input
+        formControlName="active"
+        type="checkbox"
+        class="toggle toggle-accent"
+        checked
+      />
+    </label>
+  </div>
+
+  <button (click)="submit()" class="btn btn-accent btn-outline btn-wide">
+    Submit
+  </button>
+  <button class="btn btn-secondary btn-outline ms-2" (click)="cancelForm()">
+    Cancel
+  </button>
+</form>

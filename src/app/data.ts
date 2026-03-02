@@ -1,4 +1,78 @@
 import { Course } from './models/course';
+import { ContactModel } from './store/contact/contact.model';
+
+export const contacts: ContactModel[] = [
+  {
+    id: 1,
+    name: 'Alice Dupont',
+    phone: '+212600000001',
+    image: 'images/morocco.jpg',
+    active: true,
+  },
+  {
+    id: 2,
+    name: 'Mohamed Karim',
+    phone: '+212600000002',
+    image: 'images/morocco.jpg',
+    active: false,
+  },
+  {
+    id: 3,
+    name: 'Sofia Bennani',
+    phone: '+212600000003',
+    image: 'images/morocco.jpg',
+    active: true,
+  },
+  {
+    id: 4,
+    name: 'Omar El Mansouri',
+    phone: '+212600000004',
+    image: 'images/morocco.jpg',
+    active: false,
+  },
+  {
+    id: 5,
+    name: 'Yasmine Haddad',
+    phone: '+212600000005',
+    image: 'images/morocco.jpg',
+    active: true,
+  },
+  {
+    id: 6,
+    name: 'Rachid Amrani',
+    phone: '+212600000006',
+    image: 'images/morocco.jpg',
+    active: false,
+  },
+  {
+    id: 7,
+    name: 'Fatima Zahra',
+    phone: '+212600000007',
+    image: 'images/morocco.jpg',
+    active: true,
+  },
+  {
+    id: 8,
+    name: 'Hassan Bakkali',
+    phone: '+212600000008',
+    image: 'images/morocco.jpg',
+    active: false,
+  },
+  {
+    id: 9,
+    name: 'Nadia Toumi',
+    phone: '+212600000009',
+    image: 'images/morocco.jpg',
+    active: true,
+  },
+  {
+    id: 10,
+    name: 'Karim Saidi',
+    phone: '+212600000010',
+    image: 'images/morocco.jpg',
+    active: false,
+  },
+];
 
 export const courseList: Course[] = [
   {

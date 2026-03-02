@@ -1,1 +1,55 @@
-<p>login works!</p>
+<div class="flex flex-col justify-center  items-center h-screen bg-base-100 border-x-">
+
+  <h1 class="text-3xl font-bold my-6">Login</h1>
+
+
+  <form (ngSubmit)="submit()" [formGroup]= "loginForm" class="bg-base-200 p-16 rounded-3xl">
+    @if (errorMessage) {
+      <div class="badge badge-outline badge-error gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        {{errorMessage}}
+      </div>
+    }
+    <div class="form-control w-full max-w-xs mt-5">
+      <label class="label">
+        <span class="label-text">username</span>
+        <span class="label-text-alt"></span>
+      </label>
+      <input formControlName="username" type="text" placeholder="username..." class="input input-bordered w-full max-w-xs" />
+      @if (username?.invalid && username?.touched) {
+        <label class="label">
+          @if (username?.hasError('required')) {
+            <span class="label-text-alt font-serif text-red-600">
+              username is required
+            </span>
+          }
+        </label>
+      }
+    </div>
+
+    <div class="form-control w-full max-w-xs">
+      <label class="label">
+        <span class="label-text">password</span>
+        <span class="label-text-alt">8 alpha numeric</span>
+      </label>
+      <input formControlName="password"  type="password" placeholder="********" class="input input-bordered w-full max-w-xs" />
+      @if (password?.invalid && password?.touched) {
+        <label class="label">
+          @if (password?.hasError('required')) {
+            <span class="label-text-alt font-serif text-red-600">
+              password is required
+            </span>
+          }
+          @if (password?.hasError('pattern')) {
+            <span class="label-text-alt font-serif text-red-600">
+              password should contains 8 chars including at least 1 Capital letter and at least 1 small letter and at least 1 number
+            </span>
+          }
+        </label>
+      }
+    </div>
+
+    <Button class="btn btn-wide btn-outline btn-error mt-5">Login</Button>
+  </form>
+
+</div>

@@ -6,6 +6,7 @@ import { TodosComponent } from './pages/todos/todos.component';
 import { CounterPageComponent } from './pages/counter-page/counter-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { LayoutBlogComponent } from './pages/blog/layout-blog/layout-blog.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
 
 export const routes: Routes = [
   {
@@ -44,6 +45,11 @@ export const routes: Routes = [
     component: LayoutBlogComponent,
     loadChildren: () =>
       import('./pages/blog/blog.routes').then((m) => m.routes),
+  },
+
+  {
+    path: 'contacts',
+    component: ContactsComponent,
   },
 
   {

@@ -1,0 +1,23 @@
+<div class="overflow-x-auto mb-10 pb-10">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (contact of (contacts | async); track $index) {
+      <tr>
+        <th>{{ contact.id }}</th>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>
+          <app-contact-actions [contact]="contact"></app-contact-actions>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,63 @@
+<div class="flex justify-between mx-4 my-16">
+  <h1
+    class="text-3xl font-bold text-primary border-b-4 border-secondary px-4 py-2 shadow-lg"
+  >
+    List of Contacts
+  </h1>
+
+  <button class="btn btn-primary btn-outline" (click)="showForm()">add</button>
+  <!--@else{
+  <button class="btn btn-info btn-outline" (click)="return()">Return</button>
+  } -->
+</div>
+
+<div class="flex justify-between p-16">
+  <div>
+    <button (click)="changeView(true)" class="btn btn-outline me-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z"
+        />
+      </svg>
+    </button>
+    <button (click)="changeView(false)" class="btn btn-outline">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+
+@if ((options | async)?.showForm) {
+<div class="flex my-10 justify-center">
+  <app-contact-form
+    [edit]="(options | async)?.edit || false"
+  ></app-contact-form>
+</div>
+} @if (list) {
+<div class="flex mx-40 justify-center">
+  <app-contact-list></app-contact-list>
+</div>
+} @else {
+<app-contact-grid></app-contact-grid>
+}
